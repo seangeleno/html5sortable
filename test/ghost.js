@@ -1,18 +1,9 @@
+const initTest = require('./base/baseTest.js')
+initTest(global)
+
 /* global describe,it */
 describe('Testing ghost creation methods', function () {
-// testing ghost creation functions
-  let assert = require('chai').assert
-  const { JSDOM } = require('jsdom')
-  const helper = require('./helper')
-  const sortable = helper.instrument('./src/html.sortable.js')
-  // const sortable = require('fs').readFileSync('./src/html.sortable.js', { encoding: 'utf-8' })
-  let window = (new JSDOM(``, { runScripts: 'dangerously' })).window
-   // Execute my library by inserting a <script> tag containing it.
-  const scriptEl = window.document.createElement('script')
-  scriptEl.textContent = sortable
-  window.document.head.appendChild(scriptEl)
 
-  let body = window.document.body
   body.innerHTML = `<ul class="sortable"><li class="first">dragged item</li><li>item 2</li></ul>`
   // mock dragged item
   let draggedItem = body.querySelector('.first')
@@ -41,10 +32,6 @@ describe('Testing ghost creation methods', function () {
       }
     }
   }
-
-  afterEach(() => {
-    helper.writeCoverage(window)
-  })
 
   it('sets the dataTransfer options correctly (_attachGhost)', function () {
     window.sortable.__testing._attachGhost(e, {

@@ -46,13 +46,14 @@ describe('Testing UMD (Universal Module Definition) against /dist/html.sortable.
         window.document.head.appendChild(scriptEl)
     })
 
-    // it('should define sortable', function () {
+    it('should define sortable', function () {
+      console.log('Test is deactivated, waiting for answer from jsdom')
     //   window.onModulesLoaded = () => {
     //     console.log("ready to roll!");
     //   };
     //
     //   assert.typeOf(window.requiredSortable, 'function')
-    // })
+    })
   })
   afterEach(() => {
     helper.writeCoverage(window)

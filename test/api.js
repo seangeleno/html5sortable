@@ -3,7 +3,7 @@ describe('Testing api', function () {
   // testing basic api
   let assert = require('chai').assert
   const { JSDOM } = require('jsdom')
-  const helper = require('./helper')
+  const helper = require('./base/helper')
   const sortable = helper.instrument('./src/html.sortable.js')
   // const sortable = require('fs').readFileSync('./src/html.sortable.js', { encoding: 'utf-8' })
   let window, body

@@ -4,7 +4,7 @@ describe('Testing events', function () {
   let assert = require('chai').assert
   const { JSDOM } = require('jsdom')
   // const sortable = require('fs').readFileSync('./src/html.sortable.js', { encoding: 'utf-8' })
-  const helper = require('./helper')
+  const helper = require('./base/helper')
   const sortable = helper.instrument('./src/html.sortable.js')
   let window, body
 
